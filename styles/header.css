@@ -1,0 +1,217 @@
+.cabecalho__menu-hamburger {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/Menu.svg");
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* .cabecalho__menu-hamburger:active {
+    background-color: var(--azul);
+    background-image: url("../img/Menu_white.svg");
+} */
+
+.cabecalho {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.container__titulo,
+.container__titulo--negrito {
+    display: none;
+}
+
+.opcoes {
+    display: none;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container__botao:checked ~ .container__rotulo > .cabecalho__menu-hamburger {
+    /*A imagem de .container__botao é selecionada, isto é, a pseudoclasse :checked.*/
+    /*~ é um combinador CSS que procurará .container__rotulo*/
+    /*> procura .cabecalho__menu-hamburger dentro de .container__rotulo*/
+    background-image: url("../img/Menu_white.svg");
+}
+
+.container__botao:checked ~ .container__rotulo {
+    background: var(--azul-degrade);
+}
+
+.container__imagem {
+    padding: 1em;
+}
+
+.container__texto {
+    display: none;
+}
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+
+.container__botao:checked ~ .lista-menu {
+    /*A imagem de .container__botao é selecionada, isto é, a pseudoclasse :checked.*/
+    /*~ é um combinador CSS que procurará .lista-menu*/
+    /*É como uma condicional.*/
+    display: block;
+}
+
+.container__botao:checked~.container__imagem-hamburger {
+    background-color: var(--azul);
+    background-image: url("../img/Menu_white.svg");
+}
+ 
+.lista-menu__titulo, 
+.lista-menu__item {
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.lista-menu__titulo {
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista-menu__link {
+    background: var(--azul-degrade);
+    -webkit-background-clip: text; /*webkit é para funcionar em outros tipos de navegadores.*/
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /*Prende a cor do background so onde há texto.*/
+    text-transform: uppercase; /*Torna letras todas maiúsculas*/
+}
+
+.container__botao {
+    display: none;  /*Removerá a caixa que indica a seleção do botão de hambúrger*/
+}
+
+@media screen and (min-width: 1024px) {
+    .opcoes {
+        display: flex;
+        text-transform: uppercase;
+    }
+
+    .opcoes__item {
+        padding: 2em 1em;
+    }
+
+    .opcoes__item__categorias {
+        display: none;  /*Removerá a caixa que indica a seleção do botão de hambúrger*/
+    }
+
+    .opcoes__item__categorias:checked~.lista-categorias {
+        display: block;
+    }
+
+    .opcoes__item__categorias:checked ~ .opcoes__rotulo > .opcoes__item {
+        /*A imagem de .container__botao é selecionada, isto é, a pseudoclasse :checked.*/
+        /*~ é um combinador CSS que procurará .container__rotulo*/
+        /*> procura .cabecalho__menu-hamburger dentro de .container__rotulo*/
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+    
+    /* .opcoes__item__categorias:checked ~ .opcoes__rotulo {
+        color: var(--branco);
+    } */
+
+    .opcoes__item {
+        padding: auto;
+    }
+
+    .lista-categorias {
+        display: none;
+        background-color: var(--branco);
+        position: absolute;
+        top: 100%;
+        width: 40vw;
+    }
+
+    .lista-categorias__item {
+        background-color: var(--branco);
+        padding: 1em;
+    }
+
+    .lista-categorias__link {
+        background: var(--azul-degrade);
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-transform: uppercase;
+    }
+
+    .opcoes__link {
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .container__titulo, .container__titulo--negrito {
+        font-family: var(--fonte-secundario);
+        font-weight: 30px;
+        display: inline;
+    }
+
+    .container__titulo {
+        font-weight: 400;
+    }
+
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+
+    .container__favoritos {
+        display: none;
+    }
+
+    .container__logo {
+        margin: 1em;
+    }
+
+    /* .lista-menu {
+        margin-left: 32vw;
+    } */
+
+    .cabecalho__menu-hamburger {
+        display: none;
+    }
+
+    .lista-categorias__item:hover {
+        background: var(--azul-degrade);
+    }
+
+    .lista-categorias__item:hover > .lista-categorias__link {
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .container {
+        margin-right: 80px;
+    }
+
+    .container__imagem {
+        padding-right: 1px; 
+    }
+
+    .container__linha {
+        align-items: center;
+        color: var(--preto);
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    .container__texto {
+        display: inline;
+    }
+}

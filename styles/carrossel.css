@@ -1,0 +1,152 @@
+.carrossel__titulo {
+    color: var(--laranja);
+    background-color: var(--branco);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 1em 0 0.5em 0;
+}
+
+.swiper-slide img{
+    width: 100%;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    display: none;
+}
+
+.swiper-pagination {
+    position: initial;
+    margin: 1em 0;
+}
+
+.card {
+    background-color: var(--branco);
+    margin: 1em;
+    padding: 1em;
+    border-radius: 6px;
+    box-shadow: 0 4px 4px rgba(0,0,0, 0.25);
+}
+
+.card__descricao {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5em 0;
+    line-height: 20px;
+}
+
+.descricao__titulo {
+    color: var(--laranja);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 8px;
+}
+
+.descricao__titulo-livro {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--azul);
+    margin: 0.5em;
+}
+
+.descricao__texto {
+    font-size: 14px;
+    margin: 8px;
+}
+
+.card__botoes {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.botoes {
+    display: flex;
+}
+
+.botoes__item {
+    margin: 0 0.5em;
+}
+
+.botoes__ancora {
+    align-items: center;
+    background-color: var(--laranja);
+    border-radius: 10px;
+    color: var(--branco);
+    font-size:  16px;
+    font-weight: 700;
+    padding: 1em 2.2em;
+    text-decoration: none;
+}
+
+.botoes__ancora:active {
+    background-color: var(--azul);
+}
+
+.descricao__estrelas {
+    margin: 4px 0 0 8px;
+}
+
+@media screen and (min-width: 1024px) {
+    .carrossel__titulo {
+        padding-top: 2em;
+        font-size: 26px;
+    }
+
+    .swiper-pagination {
+        margin: 2wm 0 3em 0;
+    }
+
+    .swiper {
+        margin-top: 2em;
+        width: 50%;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        display: inline;
+    }
+
+    .card {
+        width: 55%;
+        margin: 3em auto;
+    }
+
+    .card__botoes {
+        margin-bottom: 0;
+    }
+
+    .descricao {
+        margin-right: 4em;
+    }
+
+    .descricao__texto {
+        font-size: 16px;
+    }
+
+    .botoes {
+        gap: 10px;
+    }
+
+    .botoes__item {
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .carrossel__container {
+        align-items: center;
+        display: flex;
+        gap: 46px;
+        margin: 0 16vw 3em;
+    }
+
+    .descricao {
+        margin-right: 3em;
+    }
+
+    .descricao__titulo {
+        font-size: 32px;
+        line-height: normal;
+    }
+}
